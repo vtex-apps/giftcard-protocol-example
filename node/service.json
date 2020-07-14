@@ -1,0 +1,24 @@
+{
+  "stack": "nodejs",
+  "memory": 512,
+  "ttl": 43200,
+  "timeout": 300,
+  "routes": {
+    "list": {
+      "path": "/my-provider/api/giftcards/_search",
+      "public": true
+    },
+    "create": {
+      "path": "/my-provider/api/giftcards/",
+      "public": true
+    },
+    "get": {
+      "path": "/my-provider/api/giftcards/:id/",
+      "public": true
+    },
+    "settings": {
+      "path": "settings/:operation",
+      "public": false
+    }
+  }
+}

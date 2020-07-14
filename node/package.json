@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "co-body": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/co-body": "^0.0.3",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.0.0",
+    "@vtex/api": "6.35.0",
+    "@vtex/test-tools": "^1.0.0",
+    "tslint": "^5.14.0",
+    "tslint-config-vtex": "^2.1.0",
+    "typescript": "3.8.3"
+  },
+  "resolutions": {
+    "**/**/acorn": "^6.4.1",
+    "**/**/minimist": "^0.2.1",
+    "**/**/kind-of": "^6.0.3",
+    "**/**/handlebars": "^4.3.0",
+    "**/**/js-yaml": "^3.13.1"
+  },
+  "scripts": {
+    "lint": "tsc --noEmit --pretty && tslint -c tslint.json --fix './**/*.ts'"
+  },
+  "version": "0.1.1"
+}
