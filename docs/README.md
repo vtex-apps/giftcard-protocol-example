@@ -1,6 +1,8 @@
 
 
-# Gift Card Protocol Example
+# [WIP] Gift Card Protocol Example
+
+> **Attention**: This is a work in progress repository
 
 A reference app implementing a VTEX IO Gift Card integration service.
 
