@@ -9,7 +9,7 @@
       "public": true
     },
     "create": {
-      "path": "/my-provider/api/giftcards/",
+      "path": "/my-provider/api/giftcards",
       "public": true
     },
     "get": {
@@ -17,7 +17,7 @@
       "public": true
     },
     "settings": {
-      "path": "settings/:operation",
+      "path": "/settings/:operation",
       "public": false
     }
   }

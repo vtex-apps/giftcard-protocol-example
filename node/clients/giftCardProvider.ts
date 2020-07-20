@@ -15,18 +15,21 @@ export class GiftCardProvider extends ExternalClient {
       It receives the request in the format that the provider expects. Replace the
       unknown with the typing of your provider
     */
-    return [
-      {
-        cancelEnabled: true,
-        id: 'VtexGiftCard',
-        oauthProvider: 'vtex',
-        preAuthEnabled: true,
-        _self: {
-          href: 'demostore/giftcardproviders/VtexGiftCard',
-        },
-        serviceUrl: 'http://api.vtex.com/demostore',
+    return {
+      id: 'xpto',
+      redemptionToken: 'xpto',
+      redemptionCode: 'xpto',
+      balance: 0,
+      relationName: '',
+      emissionDate: '2020-10-05T14:48:00.000Z',
+      expiringDate: '2030-10-05T14:48:00.000Z',
+      caption: '',
+      provider: 'FabianaTest',
+      discount: false,
+      transaction: {
+        href: '',
       },
-    ]
+    }
   }
 
   public getListOfGiftCards() {
@@ -40,14 +43,19 @@ export class GiftCardProvider extends ExternalClient {
     */
     return [
       {
-        cancelEnabled: true,
-        id: 'VtexGiftCard',
-        oauthProvider: 'vtex',
-        preAuthEnabled: true,
-        _self: {
-          href: 'demostore/giftcardproviders/VtexGiftCard',
+        id: '',
+        redemptionToken: '',
+        redemptionCode: '',
+        balance: 0,
+        relationName: '',
+        emissionDate: '2020-10-05T14:48:00.000Z',
+        expiringDate: '2030-10-05T14:48:00.000Z',
+        caption: '',
+        provider: '',
+        discount: false,
+        transaction: {
+          href: '',
         },
-        serviceUrl: 'http://api.vtex.com/demostore',
       },
     ]
   }

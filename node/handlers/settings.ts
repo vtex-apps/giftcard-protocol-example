@@ -12,7 +12,7 @@ export async function settings(ctx: Context) {
     },
   } = ctx
 
-  if (operation === 'activate') {
+  if (operation === 'add') {
     await giftCardHub.createOrUpdateGiftCardProvider(body?.id, body)
   } else if (operation === 'delete') {
     await giftCardHub.deleteGiftCardById(body?.id)
