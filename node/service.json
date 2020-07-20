@@ -5,15 +5,15 @@
   "timeout": 300,
   "routes": {
     "list": {
-      "path": "/my-provider/api/giftcards/_search",
+      "path": "/my-provider/giftcards/_search",
       "public": true
     },
     "create": {
-      "path": "/my-provider/api/giftcards",
+      "path": "/my-provider/giftcards",
       "public": true
     },
     "get": {
-      "path": "/my-provider/api/giftcards/:id/",
+      "path": "/my-provider/giftcards/:id/",
       "public": true
     },
     "settings": {

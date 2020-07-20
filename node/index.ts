@@ -43,7 +43,7 @@ export default new Service<Clients, RecorderState, ParamsContext>({
       GET: [getOrCreateGiftCard],
     }),
     list: method({
-      GET: [listGiftCards],
+      POST: [listGiftCards],
     }),
     settings,
     // taxSimulation: [validateCheckoutAuthorization, taxSimulation],
