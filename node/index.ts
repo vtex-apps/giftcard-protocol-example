@@ -46,6 +46,5 @@ export default new Service<Clients, RecorderState, ParamsContext>({
       POST: [listGiftCards],
     }),
     settings,
-    // taxSimulation: [validateCheckoutAuthorization, taxSimulation],
   },
 })

@@ -9,9 +9,9 @@ export class GiftCardProvider extends ExternalClient {
   public getGiftCardById(_: unknown) {
     /*
       This is the method that will be used to connect to the provider API
-      and get the taxes values to be parsed later on in the orderTax handler.
+      and get a specific gift card by its id.
       For instance, it's returning a mocked object that it's already in the format
-      that VTEX expects when it's a sync request.
+      that VTEX expects.
       It receives the request in the format that the provider expects. Replace the
       unknown with the typing of your provider
     */
@@ -31,9 +31,9 @@ export class GiftCardProvider extends ExternalClient {
   public getListOfGiftCards(_: GiftCardRequestBody) {
     /*
       This is the method that will be used to connect to the provider API
-      and get the taxes values to be parsed later on in the orderTax handler.
+      and get a list of available gift cards.
       For instance, it's returning a mocked object that it's already in the format
-      that VTEX expects when it's a sync request.
+      that VTEX expects.
       It receives the request in the format that the provider expects. Replace the
       unknown with the typing of your provider
     */
@@ -56,11 +56,8 @@ export class GiftCardProvider extends ExternalClient {
   public createGiftCard(body: unknown) {
     /*
       This is the method that will be used to connect to the provider API
-      and get the taxes values to be parsed later on in the orderTax handler.
-      For instance, it's returning a mocked object that it's already in the format
-      that VTEX expects when it's a sync request.
-      It receives the request in the format that the provider expects. Replace the
-      unknown with the typing of your provider
+      and create a gift card. It needs to create the gift card and return a body
+      response in the format that VTEX expects.
     */
     return body
   }
