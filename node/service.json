@@ -19,6 +19,26 @@
     "settings": {
       "path": "/settings/:operation",
       "public": false
+    },
+    "transactions": {
+      "path": "/my-provider/giftcards/:giftCardId/transactions",
+      "public": true
+    },
+    "getTransaction": {
+      "path": "/my-provider/giftcards/:giftCardId/transactions/:id/",
+      "public": true
+    },
+    "authorization": {
+      "path": "/my-provider/giftcards/:giftCardId/transactions/:id/authorization",
+      "public": true
+    },
+    "cancellation": {
+      "path": "/my-provider/giftcards/:giftCardId/transactions/:id/cancellations",
+      "public": true
+    },
+    "settlement": {
+      "path": "/my-provider/giftcards/:giftCardId/transactions/:id/settlements",
+      "public": true
     }
   }
 }

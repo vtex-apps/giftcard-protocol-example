@@ -8,9 +8,20 @@ import {
 } from '@vtex/api'
 
 import { Clients } from './clients/index'
+import {
+  createCancellation,
+  listAllCancellations,
+} from './handlers/cancellations'
 import { getOrCreateGiftCard } from './handlers/getOrCreateGiftCard'
 import { listGiftCards } from './handlers/listGiftCards'
 import { settings } from './handlers/settings'
+import { createSettlement, listAllSettlements } from './handlers/settlements'
+import { getTransactionAuthorization } from './handlers/transactionAuthorization'
+import {
+  createTransaction,
+  getTransactionById,
+  listTransactions,
+} from './handlers/transactions'
 
 const TIMEOUT_MS = 800
 
@@ -36,15 +47,33 @@ declare global {
 export default new Service<Clients, RecorderState, ParamsContext>({
   clients,
   routes: {
+    authorization: method({
+      GET: [getTransactionAuthorization],
+    }),
+    cancellation: method({
+      GET: [listAllCancellations],
+      POST: [createCancellation],
+    }),
     create: method({
       POST: [getOrCreateGiftCard],
     }),
     get: method({
       GET: [getOrCreateGiftCard],
     }),
+    getTransaction: method({
+      GET: [getTransactionById],
+    }),
     list: method({
       POST: [listGiftCards],
     }),
     settings,
+    settlement: method({
+      GET: [listAllSettlements],
+      POST: [createSettlement],
+    }),
+    transactions: method({
+      GET: [listTransactions],
+      POST: [createTransaction],
+    }),
   },
 })

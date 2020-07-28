@@ -61,4 +61,84 @@ export class GiftCardProvider extends ExternalClient {
     */
     return body
   }
+
+  public createTransaction(_: string, __: TransactionRequest) {
+    /*
+      This is the method that will be used to connect to the provider API
+      and create a gift card. It needs to create the gift card and return a body
+      response in the format that VTEX expects.
+    */
+    return {
+      cardId: 'abc',
+      id: '01010101',
+      _self: {
+        href: 'appliancetheme/giftcardproviders/FabianaTest',
+      },
+    }
+  }
+
+  public listTransactions(_: string) {
+    /*
+      This is the method that will be used to connect to the provider API
+      and create a gift card. It needs to create the gift card and return a body
+      response in the format that VTEX expects.
+    */
+    return []
+  }
+
+  public getTransactionById(_: string, __: string) {
+    /*
+      Method that handlers the case of getting a transaction by its id.
+      The parameter is the id.
+    */
+    return {}
+  }
+
+  public getTransactionAuthorization(_: string, __: string) {
+    /*
+      Method that handlers the case of getting a transaction authorization by its id.
+      The parameters are the transaction id and the gift card id.
+    */
+    return {}
+  }
+
+  public createCancellation(
+    _: string,
+    __: string,
+    ___: { value: number; requestId: string }
+  ) {
+    /*
+      Method that handlers the case of creating a transaction cancellation.
+      The parameters are the value and the request id.
+    */
+    return {}
+  }
+
+  public listAllCancellations(_: string, __: string) {
+    /*
+      Method that handlers the case of getting a transaction authorization by its id.
+      The parameter is the id.
+    */
+    return {}
+  }
+
+  public createSettlement(
+    _: number,
+    __: string,
+    ___: { value: number; requestId: string }
+  ) {
+    /*
+      Method that handlers the case of creating a transaction settlement.
+      The parameters are the value and the request id.
+    */
+    return {}
+  }
+
+  public listAllSettlements(_: string, __: string) {
+    /*
+      Method that handlers the case of getting a transaction authorization by its id.
+      The parameter is the id.
+    */
+    return {}
+  }
 }
