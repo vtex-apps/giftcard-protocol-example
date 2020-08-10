@@ -11,9 +11,11 @@ export async function getOrCreateGiftCard(ctx: Context) {
   } = ctx
 
   if (id) {
-    ctx.body = giftCardProvider.getGiftCardById(id)
+    console.log('GET GIFT CARD')
+    ctx.body = giftCardProvider.getGiftCardById(id as string)
   } else {
     const body = await json(ctx.req)
+    console.log('CREATE GIFT CARD')
     ctx.body = giftCardProvider.createGiftCard(body)
   }
 

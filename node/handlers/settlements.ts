@@ -10,8 +10,13 @@ export async function listAllSettlements(ctx: Context) {
     },
   } = ctx
 
+  console.log('LIST ALL SETTLEMENTS')
+
   ctx.status = 200
-  ctx.body = giftCardProvider.listAllSettlements(id, giftCardId)
+  ctx.body = giftCardProvider.listAllSettlements(
+    id as string,
+    giftCardId as string
+  )
 }
 
 export async function createSettlement(ctx: Context) {
@@ -26,6 +31,12 @@ export async function createSettlement(ctx: Context) {
     },
   } = ctx
 
+  console.log('CREATE SETTLEMENT')
+
   ctx.status = 200
-  ctx.body = giftCardProvider.createSettlement(id, giftCardId, body)
+  ctx.body = giftCardProvider.createSettlement(
+    id as string,
+    giftCardId as string,
+    body
+  )
 }

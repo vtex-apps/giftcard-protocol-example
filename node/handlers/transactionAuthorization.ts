@@ -8,6 +8,11 @@ export async function getTransactionAuthorization(ctx: Context) {
     },
   } = ctx
 
+  console.log('GET TRANSACTION AUTHORIZATION')
+
   ctx.status = 200
-  ctx.body = giftCardProvider.getTransactionAuthorization(id, giftCardId)
+  ctx.body = giftCardProvider.getTransactionAuthorization(
+    id as string,
+    giftCardId as string
+  )
 }

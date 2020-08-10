@@ -17,21 +17,33 @@ export class GiftCardHub extends VtexCommerce {
     })
   }
 
+  // eslint-disable-next-line max-params
   public createOrUpdateGiftCardProvider(
     id: string,
     body: GiftCardProvider,
+    userToken: string,
     tracingConfig?: RequestTracingConfig
   ) {
     const metric = 'giftcardprovider-createOrUpdate'
     return this.http.put<GiftCardProviderResponse>(id, body, {
+      headers: {
+        VtexIdclientAutCookie: userToken,
+      },
       metric,
       tracing: createTracing(metric, tracingConfig),
     })
   }
 
-  public deleteGiftCardById(id: string, tracingConfig?: RequestTracingConfig) {
+  public deleteGiftCardById(
+    id: string,
+    userToken: string,
+    tracingConfig?: RequestTracingConfig
+  ) {
     const metric = 'giftcardprovider-Delete'
     return this.http.delete<any>(id, {
+      headers: {
+        VtexIdclientAutCookie: userToken,
+      },
       metric,
       tracing: createTracing(metric, tracingConfig),
     })

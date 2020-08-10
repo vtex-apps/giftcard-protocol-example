@@ -10,8 +10,13 @@ export async function listAllCancellations(ctx: Context) {
     },
   } = ctx
 
+  console.log('LIST CANCELLATIONS')
+
   ctx.status = 200
-  ctx.body = giftCardProvider.listAllCancellations(id, giftCardId)
+  ctx.body = giftCardProvider.listAllCancellations(
+    id as string,
+    giftCardId as string
+  )
 }
 
 export async function createCancellation(ctx: Context) {
@@ -26,6 +31,12 @@ export async function createCancellation(ctx: Context) {
     },
   } = ctx
 
+  console.log('CREATE CANCELLATION')
+
   ctx.status = 200
-  ctx.body = giftCardProvider.createCancellation(id, giftCardId, body)
+  ctx.body = giftCardProvider.createCancellation(
+    id as string,
+    giftCardId as string,
+    body
+  )
 }

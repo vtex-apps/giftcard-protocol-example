@@ -6,7 +6,7 @@ export class GiftCardProvider extends ExternalClient {
     super('baseURL', ctx, options)
   }
 
-  public getGiftCardById(_: unknown) {
+  public getGiftCardById(id: string) {
     /*
       This is the method that will be used to connect to the provider API
       and get a specific gift card by its id.
@@ -15,11 +15,13 @@ export class GiftCardProvider extends ExternalClient {
       It receives the request in the format that the provider expects. Replace the
       unknown with the typing of your provider
     */
+
+    console.log(id)
     return {
-      balance: 1000,
+      balance: 2000,
       caption: 'presente muito bom pra fabi',
       emissionDate: '2020-10-05T14:48:00.000Z',
-      expiringDate: '2030-10-05T14:48:00.000Z',
+      expiringDate: '2030-10-10T14:48:00.000Z',
       id: 'xpto2',
       provider: 'FabianaTest',
       transaction: {
@@ -123,7 +125,7 @@ export class GiftCardProvider extends ExternalClient {
   }
 
   public createSettlement(
-    _: number,
+    _: string,
     __: string,
     ___: { value: number; requestId: string }
   ) {

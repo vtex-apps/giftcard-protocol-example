@@ -7,6 +7,8 @@ export async function listGiftCards(ctx: Context) {
     clients: { giftCardProvider },
   } = ctx
 
+  console.log('LIST GIFT CARDS')
+
   ctx.status = 200
   ctx.body = giftCardProvider.getListOfGiftCards(body)
 }
