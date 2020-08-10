@@ -3,7 +3,7 @@ type Query {
 }
 
 type Mutation {
-  setGiftCardProvider (id: String, body: GiftCardProviderInput): GiftCardProviderResponse
+  setGiftCardProvider (id: String, giftCardProvInput: GiftCardProviderInput): GiftCardProviderResponse
   deleteGiftCardProvider (id: String): GiftCardProviderResponse
 }
 
