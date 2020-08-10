@@ -9,6 +9,7 @@
   "dependencies": {},
   "builders": {
     "node": "6.x",
+    "graphql": "1.x",
     "docs": "0.x"
   },
   "scripts": {

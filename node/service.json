@@ -16,10 +16,6 @@
       "path": "/my-provider/giftcards/:id/",
       "public": true
     },
-    "settings": {
-      "path": "/settings/:operation",
-      "public": false
-    },
     "transactions": {
       "path": "/my-provider/giftcards/:giftCardId/transactions",
       "public": true

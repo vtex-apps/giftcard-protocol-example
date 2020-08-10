@@ -14,7 +14,6 @@ import {
 } from './handlers/cancellations'
 import { getOrCreateGiftCard } from './handlers/getOrCreateGiftCard'
 import { listGiftCards } from './handlers/listGiftCards'
-import { settings } from './handlers/settings'
 import { createSettlement, listAllSettlements } from './handlers/settlements'
 import { getTransactionAuthorization } from './handlers/transactionAuthorization'
 import {
@@ -22,6 +21,8 @@ import {
   getTransactionById,
   listTransactions,
 } from './handlers/transactions'
+import { deleteGiftCardProvider } from './resolvers/deleteGiftCardProvider'
+import { setGiftCardProvider } from './resolvers/setGiftCardProvider'
 
 const TIMEOUT_MS = 800
 
@@ -46,6 +47,14 @@ declare global {
 // It's possible to check the implementation of each handler in the handlers folder
 export default new Service<Clients, RecorderState, ParamsContext>({
   clients,
+  graphql: {
+    resolvers: {
+      Mutation: {
+        deleteGiftCardProvider,
+        setGiftCardProvider,
+      },
+    },
+  },
   routes: {
     authorization: method({
       GET: [getTransactionAuthorization],
@@ -66,7 +75,6 @@ export default new Service<Clients, RecorderState, ParamsContext>({
     list: method({
       POST: [listGiftCards],
     }),
-    settings,
     settlement: method({
       GET: [listAllSettlements],
       POST: [createSettlement],
