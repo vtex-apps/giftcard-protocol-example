@@ -18,9 +18,9 @@ export class GiftCardProvider extends ExternalClient {
 
     console.log(id)
     return {
-      balance: 2000,
+      balance: 100000,
       caption: 'gift card by id',
-      emissionDate: '2020-10-05T14:48:00.000Z',
+      emissionDate: '2020-07-05T14:48:00.000Z',
       expiringDate: '2030-10-10T14:48:00.000Z',
       id: 'xpto2',
       provider: 'FabianaTest',
@@ -47,7 +47,7 @@ export class GiftCardProvider extends ExternalClient {
         id: 'xpto1',
         provider: 'FabianaTest',
         relationName: 'xpto1',
-        totalBalance: 2000,
+        totalBalance: 1000000,
         _self: {
           href: 'appliancetheme/giftcardproviders/FabianaTest',
         },
