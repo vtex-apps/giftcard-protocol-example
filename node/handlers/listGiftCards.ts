@@ -10,5 +10,6 @@ export async function listGiftCards(ctx: Context) {
   console.log('LIST GIFT CARDS')
 
   ctx.status = 200
+  ctx.set('Cache-Control', 'no-cache,no-store')
   ctx.body = giftCardProvider.getListOfGiftCards(body)
 }

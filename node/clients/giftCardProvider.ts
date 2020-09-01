@@ -22,7 +22,7 @@ export class GiftCardProvider extends ExternalClient {
       caption: 'gift card by id',
       emissionDate: '2020-07-05T14:48:00.000Z',
       expiringDate: '2030-10-10T14:48:00.000Z',
-      id: 'xpto2',
+      id: 'xpto1',
       provider: 'FabianaTest',
       transaction: {
         href: 'appliancetheme/giftcardproviders/FabianaTest',
@@ -42,16 +42,16 @@ export class GiftCardProvider extends ExternalClient {
 
     return [
       {
-        balance: 1000,
-        caption: 'gift card da lista',
+        balance: 100000,
+        caption: 'gift card by id',
+        emissionDate: '2020-07-05T14:48:00.000Z',
+        expiringDate: '2030-10-10T14:48:00.000Z',
         id: 'xpto1',
         provider: 'FabianaTest',
-        relationName: 'xpto1',
-        totalBalance: 1000000,
-        _self: {
+        transaction: {
           href: 'appliancetheme/giftcardproviders/FabianaTest',
         },
-      },
+      }
     ]
   }
 
