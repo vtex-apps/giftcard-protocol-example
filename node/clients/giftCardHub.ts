@@ -14,6 +14,18 @@ export class GiftCardHub extends VtexCommerce {
             }
           : {}),
       },
+      params: {
+        an: ctx.account,
+        ...options?.params,
+      },
+    })
+  }
+
+  public getProviders(tracingConfig?: RequestTracingConfig) {
+    const metric = 'giftcardprovider-getProviders'
+    return this.http.get<GiftCardProviderResponse[]>('', {
+      metric,
+      tracing: createTracing(metric, tracingConfig),
     })
   }
 
@@ -55,8 +67,6 @@ interface GiftCardProvider {
   oauthProvider: string
   preAuthEnabled: boolean
   cancelEnabled: boolean
-  appToken: string
-  appKey: string
 }
 
 interface GiftCardProviderResponse extends GiftCardProvider {

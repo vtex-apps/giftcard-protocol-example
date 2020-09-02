@@ -21,6 +21,7 @@ import {
   listTransactions,
 } from './handlers/transactions'
 import { deleteGiftCardProvider } from './resolvers/deleteGiftCardProvider'
+import { getGiftCardProviders } from './resolvers/getProviders'
 import { setGiftCardProvider } from './resolvers/setGiftCardProvider'
 
 const TIMEOUT_MS = 800
@@ -51,6 +52,9 @@ export default new Service<Clients, RecorderState, ParamsContext>({
       Mutation: {
         deleteGiftCardProvider,
         setGiftCardProvider,
+      },
+      Query: {
+        getGiftCardProviders,
       },
     },
   },

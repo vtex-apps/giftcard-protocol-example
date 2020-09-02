@@ -1,6 +1,4 @@
-export const parseGiftCardToProvider = (
-  giftCardRequest: GiftCardRequestBody
-) => {
+export const parseGiftCardToProvider = (giftCardRequest: GiftCardRequest) => {
   // Parse here the checkout request to the expected format
   return giftCardRequest
 }
