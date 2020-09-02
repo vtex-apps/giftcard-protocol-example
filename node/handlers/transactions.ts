@@ -10,16 +10,12 @@ export async function listTransactions(ctx: Context) {
     },
   } = ctx
 
-  console.log('LIST TRANSACTION')
-
   ctx.status = 200
   ctx.body = giftCardProvider.listTransactions(giftCardId as string)
 }
 
 export async function createTransaction(ctx: Context) {
   const body = await json(ctx.req)
-
-  console.log('CREATE TRANSACTION')
 
   const {
     clients: { giftCardProvider },
@@ -44,10 +40,25 @@ export async function getTransactionById(ctx: Context) {
     },
   } = ctx
 
-  console.log('GET TRANSACTION')
-
   ctx.status = 200
   ctx.body = giftCardProvider.getTransactionById(
+    id as string,
+    giftCardId as string
+  )
+}
+
+export async function getTransactionAuthorization(ctx: Context) {
+  const {
+    clients: { giftCardProvider },
+    vtex: {
+      route: {
+        params: { giftCardId, id },
+      },
+    },
+  } = ctx
+
+  ctx.status = 200
+  ctx.body = giftCardProvider.getTransactionAuthorization(
     id as string,
     giftCardId as string
   )

@@ -10,8 +10,6 @@ export async function listAllCancellations(ctx: Context) {
     },
   } = ctx
 
-  console.log('LIST CANCELLATIONS')
-
   ctx.status = 200
   ctx.body = giftCardProvider.listAllCancellations(
     id as string,
@@ -20,7 +18,7 @@ export async function listAllCancellations(ctx: Context) {
 }
 
 export async function createCancellation(ctx: Context) {
-  const body = await json(ctx.req)
+  const body: CreateCancellationBody = await json(ctx.req)
 
   const {
     clients: { giftCardProvider },
@@ -30,8 +28,6 @@ export async function createCancellation(ctx: Context) {
       },
     },
   } = ctx
-
-  console.log('CREATE CANCELLATION')
 
   ctx.status = 200
   ctx.body = giftCardProvider.createCancellation(

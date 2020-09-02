@@ -6,17 +6,16 @@ export class GiftCardProvider extends ExternalClient {
     super('baseURL', ctx, options)
   }
 
-  public getGiftCardById(id: string) {
+  public getGiftCardById(_: string) {
     /*
       This is the method that will be used to connect to the provider API
       and get a specific gift card by its id.
       For instance, it's returning a mocked object that it's already in the format
       that VTEX expects.
-      It receives the request in the format that the provider expects. Replace the
-      unknown with the typing of your provider
+      It receives a string, which is the id. For now, it returns a mocked gift card,
+      but it's here where the connection with the external API will happen.
     */
 
-    console.log(id)
     return {
       balance: 100000,
       caption: 'gift card by id',
@@ -30,14 +29,15 @@ export class GiftCardProvider extends ExternalClient {
     }
   }
 
-  public getListOfGiftCards(_: GiftCardRequestBody) {
+  public getListOfGiftCards(_: GiftCardListRequest) {
     /*
       This is the method that will be used to connect to the provider API
       and get a list of available gift cards.
       For instance, it's returning a mocked object that it's already in the format
       that VTEX expects.
-      It receives the request in the format that the provider expects. Replace the
-      unknown with the typing of your provider
+      It receives a well defined body, which is the format that the hub uses. For now,
+      it's returning a mocked list that contains only one gift card that is already
+      in the format that the Hub expects.
     */
 
     return [
@@ -51,11 +51,11 @@ export class GiftCardProvider extends ExternalClient {
         transaction: {
           href: 'appliancetheme/giftcardproviders/FabianaTest',
         },
-      }
+      },
     ]
   }
 
-  public createGiftCard(body: unknown) {
+  public createGiftCard(body: GiftCardRequest) {
     /*
       This is the method that will be used to connect to the provider API
       and create a gift card. It needs to create the gift card and return a body
@@ -71,7 +71,7 @@ export class GiftCardProvider extends ExternalClient {
       response in the format that VTEX expects.
     */
     return {
-      cardId: 'abc',
+      cardId: 'xpto1',
       id: '01010101',
       _self: {
         href: 'appliancetheme/giftcardproviders/FabianaTest',
@@ -107,11 +107,10 @@ export class GiftCardProvider extends ExternalClient {
   public createCancellation(
     _: string,
     __: string,
-    ___: { value: number; requestId: string }
+    ___: CreateCancellationBody
   ) {
     /*
       Method that handlers the case of creating a transaction cancellation.
-      The parameters are the value and the request id.
     */
     return {}
   }
@@ -124,14 +123,9 @@ export class GiftCardProvider extends ExternalClient {
     return {}
   }
 
-  public createSettlement(
-    _: string,
-    __: string,
-    ___: { value: number; requestId: string }
-  ) {
+  public createSettlement(_: string, __: string, ___: CreateSettlementBody) {
     /*
       Method that handlers the case of creating a transaction settlement.
-      The parameters are the value and the request id.
     */
     return {}
   }

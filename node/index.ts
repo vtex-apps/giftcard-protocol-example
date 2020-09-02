@@ -12,12 +12,11 @@ import {
   createCancellation,
   listAllCancellations,
 } from './handlers/cancellations'
-import { getOrCreateGiftCard } from './handlers/getOrCreateGiftCard'
-import { listGiftCards } from './handlers/listGiftCards'
+import { getOrCreateGiftCard, listGiftCards } from './handlers/giftcards'
 import { createSettlement, listAllSettlements } from './handlers/settlements'
-import { getTransactionAuthorization } from './handlers/transactionAuthorization'
 import {
   createTransaction,
+  getTransactionAuthorization,
   getTransactionById,
   listTransactions,
 } from './handlers/transactions'

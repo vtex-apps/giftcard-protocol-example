@@ -1,33 +1,13 @@
-export const parseVtexToProvider = (checkoutRequest: CheckoutRequest) => {
+export const parseGiftCardToProvider = (
+  giftCardRequest: GiftCardRequestBody
+) => {
   // Parse here the checkout request to the expected format
-  return checkoutRequest
+  return giftCardRequest
 }
 
-interface CheckoutRequest {
-  items: Item[]
-  clientData: Client
-  shippingDestination: ShippingInformation
-  orderFormId: string
-}
-
-interface Item {
-  id: string
-  sku: string
-  itemPrice: number
-  discountPrice: number | null
-  dockId: string
-  freightPrice: number
-}
-
-interface Client {
-  email: string
-}
-
-interface ShippingInformation {
-  country: string
-  state: string
-  city: string
-  neighborhood: string
-  street: string
-  postalCode: string
+export const parseTransactionToProvider = (
+  transactionRequest: TransactionRequest
+) => {
+  // Parse here the checkout request to the expected format
+  return transactionRequest
 }

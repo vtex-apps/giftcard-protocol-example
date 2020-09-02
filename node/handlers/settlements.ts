@@ -10,8 +10,6 @@ export async function listAllSettlements(ctx: Context) {
     },
   } = ctx
 
-  console.log('LIST ALL SETTLEMENTS')
-
   ctx.status = 200
   ctx.body = giftCardProvider.listAllSettlements(
     id as string,
@@ -20,7 +18,7 @@ export async function listAllSettlements(ctx: Context) {
 }
 
 export async function createSettlement(ctx: Context) {
-  const body = await json(ctx.req)
+  const body: CreateSettlementBody = await json(ctx.req)
 
   const {
     clients: { giftCardProvider },
@@ -30,8 +28,6 @@ export async function createSettlement(ctx: Context) {
       },
     },
   } = ctx
-
-  console.log('CREATE SETTLEMENT')
 
   ctx.status = 200
   ctx.body = giftCardProvider.createSettlement(
