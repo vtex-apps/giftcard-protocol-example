@@ -2,8 +2,6 @@
 
 # [WIP] Gift Card Protocol Example
 
-> **Attention**: This is a work in progress repository
-
 A reference app implementing a VTEX IO Gift Card integration service.
 
 ## Uses
@@ -53,7 +51,8 @@ After doing that, you will receive a response similar to this one:
 In this example app, there are also two mutations configured, which are related to adding or deleting a provider from an account.
 
 ## Routes
-
+Gift Card Hub expects the provider's API to be able to handle some endpoints that are related to gift card, transactions, cancellations, settlements, etc. In this example, all the routes are defined on the `service.json` and have their handlers implemented. 
+> The base URL that is used is defined when configuring the provider on an account.
 
 ## Testing the app
 At first, you can test all your routes on Postman, to make sure that they work as you expect it to. 
