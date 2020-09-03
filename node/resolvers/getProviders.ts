@@ -5,11 +5,6 @@ export async function getGiftCardProviders(
   __: unknown,
   ctx: Context
 ) {
-  /*
-    This resolver is responsible for activating or deactivating the
-    tax service on the order form configuration by using GraphQL
-  */
-
   const {
     clients: { giftCardHub },
     vtex: { adminUserAuthToken: userToken },
@@ -19,5 +14,7 @@ export async function getGiftCardProviders(
     throw new AuthenticationError('No authorization provided')
   }
 
-  giftCardHub.getProviders()
+  const providers = giftCardHub.getProviders(userToken)
+
+  return providers
 }

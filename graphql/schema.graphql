@@ -3,8 +3,11 @@ type Query {
 }
 
 type Mutation {
-  setGiftCardProvider (id: String, giftCardProvInput: GiftCardProviderInput): GiftCardProviderResponse
-  deleteGiftCardProvider (id: String): GiftCardProviderResponse
+  setGiftCardProvider(
+    id: String
+    giftCardProvInput: GiftCardProviderInput
+  ): GiftCardProviderResponse
+  deleteGiftCardProvider(id: String): GiftCardProviderResponse
 }
 
 type GiftCardProvider {
@@ -12,8 +15,6 @@ type GiftCardProvider {
   oauthProvider: String
   preAuthEnabled: Boolean
   cancelEnabled: Boolean
-  appToken: String
-  appKey: String
 }
 
 input GiftCardProviderInput {
@@ -23,10 +24,9 @@ input GiftCardProviderInput {
   cancelEnabled: Boolean
   appKey: String
   appToken: String
-
 }
 
-type GiftCardProviderResponse  {
+type GiftCardProviderResponse {
   serviceUrl: String
   oauthProvider: String
   preAuthEnabled: Boolean

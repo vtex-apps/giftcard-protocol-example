@@ -14,16 +14,16 @@ export class GiftCardHub extends VtexCommerce {
             }
           : {}),
       },
-      params: {
-        an: ctx.account,
-        ...options?.params,
-      },
     })
   }
 
-  public getProviders(tracingConfig?: RequestTracingConfig) {
+  public getProviders(userToken: string, tracingConfig?: RequestTracingConfig) {
     const metric = 'giftcardprovider-getProviders'
-    return this.http.get<GiftCardProviderResponse[]>('', {
+
+    return this.http.get<GiftCardProvider[]>('', {
+      headers: {
+        VtexIdclientAutCookie: userToken,
+      },
       metric,
       tracing: createTracing(metric, tracingConfig),
     })

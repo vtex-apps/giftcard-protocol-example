@@ -6,8 +6,8 @@ export async function deleteGiftCardProvider(
   ctx: Context
 ) {
   /*
-    This resolver is responsible for activating or deactivating the
-    tax service on the order form configuration by using GraphQL
+    This resolver is responsible for deleting a gift card provider
+    on an account by using GraphQL
   */
 
   const {
