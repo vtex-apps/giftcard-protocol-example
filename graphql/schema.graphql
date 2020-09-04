@@ -22,8 +22,6 @@ input GiftCardProviderInput {
   oauthProvider: String
   preAuthEnabled: Boolean
   cancelEnabled: Boolean
-  appKey: String
-  appToken: String
 }
 
 type GiftCardProviderResponse {
@@ -31,8 +29,6 @@ type GiftCardProviderResponse {
   oauthProvider: String
   preAuthEnabled: Boolean
   cancelEnabled: Boolean
-  appToken: String
-  appKey: String
   id: String
   caption: String
   _self: Self

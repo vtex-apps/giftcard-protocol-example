@@ -14,7 +14,5 @@ export async function getGiftCardProviders(
     throw new AuthenticationError('No authorization provided')
   }
 
-  const providers = giftCardHub.getProviders(userToken)
-
-  return providers
+  return giftCardHub.getProviders(userToken)
 }

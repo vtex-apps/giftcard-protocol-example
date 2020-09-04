@@ -50,6 +50,50 @@ After doing that, you will receive a response similar to this one:
 
 In this example app, there are also two mutations configured, which are related to adding or deleting a provider from an account.
 
+- Setting a provider
+  ```graphql
+  mutation ($id: String, $giftCardProvInput: GiftCardProviderInput) {
+    setGiftCardProvider (id: $id, giftCardProvInput: $giftCardProvInput){
+      serviceUrl
+      oauthProvider
+      preAuthEnabled
+      cancelEnabled
+    }
+  }
+  ```
+
+  Query variables:
+  ```json
+  {
+    "id": "FabianaTest2",
+    "giftCardProvInput": {
+      "serviceUrl": "https://fabiana--appliancetheme.myvtex.com/my-provider",
+      "oauthProvider": "vtex",
+      "preAuthEnabled": true,
+      "cancelEnabled": true
+    }
+  }
+  ```
+
+- Deleting a provider
+  ```graphql
+  mutation ($id: String) {
+    deleteGiftCardProvider (id: $id){
+      serviceUrl
+      oauthProvider
+      preAuthEnabled
+      cancelEnabled
+    }
+  }
+  ```
+
+  Query variables:
+  ```json
+  {
+    "id": "FabianaTest2",
+  }
+  ```
+
 ## Routes
 Gift Card Hub expects the provider's API to be able to handle some endpoints that are related to gift card, transactions, cancellations, settlements, etc. In this example, all the routes are defined on the `service.json` and have their handlers implemented. 
 > The base URL that is used is defined when configuring the provider on an account.

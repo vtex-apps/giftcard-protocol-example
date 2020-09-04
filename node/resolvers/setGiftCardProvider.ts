@@ -2,7 +2,7 @@ import { AuthenticationError } from '@vtex/api'
 
 export async function setGiftCardProvider(
   _: unknown,
-  { id, body }: SetInput,
+  { id, giftCardProvInput }: SetInput,
   ctx: Context
 ) {
   /*
@@ -19,12 +19,16 @@ export async function setGiftCardProvider(
     throw new AuthenticationError('No authorization provided')
   }
 
-  giftCardHub.createOrUpdateGiftCardProvider(id, body, userToken)
+  return giftCardHub.createOrUpdateGiftCardProvider(
+    id,
+    giftCardProvInput,
+    userToken
+  )
 }
 
 interface SetInput {
   id: string
-  body: GiftCardProvider
+  giftCardProvInput: GiftCardProvider
 }
 
 interface GiftCardProvider {
@@ -32,6 +36,4 @@ interface GiftCardProvider {
   oauthProvider: string
   preAuthEnabled: boolean
   cancelEnabled: boolean
-  appToken: string
-  appKey: string
 }

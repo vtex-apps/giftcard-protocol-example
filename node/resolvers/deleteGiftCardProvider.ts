@@ -19,7 +19,7 @@ export async function deleteGiftCardProvider(
     throw new AuthenticationError('No authorization provided')
   }
 
-  giftCardHub.deleteGiftCardById(id, userToken)
+  return giftCardHub.deleteGiftCardById(id, userToken)
 }
 
 interface DeleteInput {
