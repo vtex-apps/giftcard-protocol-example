@@ -1,17 +1,21 @@
 
 
-# [WIP] Gift Card Protocol Example
+# Gift Card Protocol Example
 
 A reference app implementing a VTEX IO Gift Card integration service.
 
 ## Uses
-This app is an example to be followed in order to develop a gift card service integration with VTEX. 
+This app is an example to be followed in order to develop a gift card service integration with VTEX. It's important to know that so as to test this application to place an order or only test its use on Checkout, it's necessary to register the external provider on the account. By doing that, Gift Card Hub will know how to compose the routes which it's going to send the requests to. This step can be found in the [GraphQL section](#graphql-queries-and-mutations).
 
 ## Clients
 In this example, there are a few clients implemented for you to use.
 - `GiftCardHub`: used to connect to the Gift Card Hub to configure or delete a provider on an account;
 - `GiftCardProvider`: used to connect to the provider's external API, where it must have methods implemented to handle all the request that the Gift Card Hub might make;
 - `VtexCommerce`: basic external client that can be used as the class that can be inherited to develop other clients that connectes to VTEX API. 
+
+## Routes
+Gift Card Hub expects the provider's API to be able to handle some endpoints that are related to gift card, transactions, cancellations, settlements, etc. In this example, all the routes are defined on the `service.json` and have their handlers implemented. 
+> The base URL that is used is defined when configuring the provider on an account.
 
 ## Parsers
 As a way to simplify the logic behind the handlers that are implemented in this example, all the code logic that can be necessary to parse the payloads to a specific format is expected to be implemented inside `parsers` directory. This is necessary because both the external provider API and VTEX API expect specific payload formats. Inside the folder, there are two files, `providerToVtex.ts` and `vtexToProvider.ts`.
@@ -94,9 +98,6 @@ In this example app, there are also two mutations configured, which are related 
   }
   ```
 
-## Routes
-Gift Card Hub expects the provider's API to be able to handle some endpoints that are related to gift card, transactions, cancellations, settlements, etc. In this example, all the routes are defined on the `service.json` and have their handlers implemented. 
-> The base URL that is used is defined when configuring the provider on an account.
 
 ## Testing the app
 At first, you can test all your routes on Postman, to make sure that they work as you expect it to. 
