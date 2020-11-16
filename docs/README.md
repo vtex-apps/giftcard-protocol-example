@@ -5,7 +5,16 @@
 A reference app implementing a VTEX IO Gift Card integration service.
 
 ## Uses
-This app is an example to be followed in order to develop a gift card service integration with VTEX. It's important to know that so as to test this application to place an order or only test its use on Checkout, it's necessary to register the external provider on the account. By doing that, Gift Card Hub will know how to compose the routes which it's going to send the requests to. This step can be found in the [GraphQL section](#graphql-queries-and-mutations).
+This app is an example to be followed in order to develop a gift card service integration with VTEX. 
+
+
+## Testing the app
+At first, once you link this application, it's important to know that so as to test it in a store to place an order, for example, it's necessary to register the external provider on the account. By doing that, Gift Card Hub will know how to compose the routes which it's going to send the requests to. This step can be found in the [GraphQL section](#graphql-queries-and-mutations).
+
+Having the app linked, it will have the routes mentioned before exposed. At first, you can test all your routes on Postman, to make sure that they work as you expect it to. After doing that, you can trigger the communication between the Gift Card Hub and your application by simulating a purchase on a store. You'll have to configure your provider on an account so you can use it on your simulation.
+
+> **NOTE**: Some endpoints are only used when the order status changes, such as settlement and cancellation, which means that you need to have permission to use the admin panel to change orders' status.
+
 
 ## Clients
 In this example, there are a few clients implemented for you to use.
@@ -115,13 +124,3 @@ In this example app, there are also two mutations configured, which are related 
     "id": "FabianaTest2",
   }
   ```
-
-
-## Testing the app
-At first, you can test all your routes on Postman, to make sure that they work as you expect it to. 
-
-After doing that, you can trigger the communication between the Gift Card Hub and your application by simulating a purchase on a store. You'll have to configure your provider on an account so you can use it on your simulation.
-
-Some endpoints are only used when the order status changes, such as settlement and cancellation, which means that you need to have permission to use the admin panel to change orders' status.
-
-
