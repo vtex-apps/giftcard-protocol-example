@@ -2,11 +2,7 @@
 
 # Gift Card Protocol Example
 
-A reference app implementing a VTEX IO Gift Card integration service.
-
-## Uses
-This app is an example to be followed in order to develop a gift card service integration with VTEX. 
-
+A reference app implementing a VTEX IO Gift Card integration service. This app is an example to be followed in order to develop a gift card service integration with VTEX. 
 
 ## Testing the app
 At first, once you link this application, it's important to know that so as to test it in a store to place an order, for example, it's necessary to register the external provider on the account. By doing that, Gift Card Hub will know how to compose the routes which it's going to send the requests to. This step can be found in the [GraphQL section](#graphql-queries-and-mutations).
