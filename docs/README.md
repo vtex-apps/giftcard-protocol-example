@@ -45,8 +45,26 @@ query {
 ```
 
 After doing that, you will receive a response similar to this one:
-
-![image](https://user-images.githubusercontent.com/19495917/92129401-d8404c00-edd9-11ea-9ce7-fbfa70a46449.png)
+```json
+{
+  "data": {
+    "getGiftCardProviders": [
+      {
+        "serviceUrl": "http://api.vtex.com/appliancetheme",
+        "oauthProvider": "vtex",
+        "preAuthEnabled": true,
+        "cancelEnabled": true
+      },
+      {
+        "serviceUrl": "https://fabiana--appliancetheme.myvtex.com/my-provider",
+        "oauthProvider": "vtex",
+        "preAuthEnabled": true,
+        "cancelEnabled": true
+      }
+    ]
+  }
+}
+```
 
 > **Note**: There will always be a VTEX Gift Card provider configured on any account, because this is the native provider offered by VTEX.
 
