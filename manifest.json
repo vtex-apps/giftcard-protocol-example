@@ -25,5 +25,21 @@
       }
     }
   ],
+  "settingsSchema": {
+    "title": "Gift Card Protocol Example Paramters",
+    "type": "object",
+    "properties": {
+      "giftCardHubAppKey": {
+        "title": "GiftCard Protocol App Key",
+        "type": "string",
+        "description": "GiftCard HUB App Key"
+      },
+      "giftCardHubAppToken": {
+        "title": "GiftCard Protocol App Token",
+        "type": "string",
+        "description": "GiftCard HUB App Token"
+      }
+    }
+  },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }
