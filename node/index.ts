@@ -23,6 +23,7 @@ import {
 import { deleteGiftCardProvider } from './resolvers/deleteGiftCardProvider'
 import { getGiftCardProviders } from './resolvers/getProviders'
 import { setGiftCardProvider } from './resolvers/setGiftCardProvider'
+import { validateCredentials } from './handlers/credentials'
 
 const TIMEOUT_MS = 800
 
@@ -60,31 +61,31 @@ export default new Service<Clients, RecorderState, ParamsContext>({
   },
   routes: {
     authorization: method({
-      GET: [getTransactionAuthorization],
+      GET: [validateCredentials, getTransactionAuthorization],
     }),
     cancellation: method({
-      GET: [listAllCancellations],
-      POST: [createCancellation],
+      GET: [validateCredentials, listAllCancellations],
+      POST: [validateCredentials, createCancellation],
     }),
     create: method({
-      POST: [getOrCreateGiftCard],
+      POST: [validateCredentials, getOrCreateGiftCard],
     }),
     get: method({
-      GET: [getOrCreateGiftCard],
+      GET: [validateCredentials, getOrCreateGiftCard],
     }),
     getTransaction: method({
-      GET: [getTransactionById],
+      GET: [validateCredentials, getTransactionById],
     }),
     list: method({
-      POST: [listGiftCards],
+      POST: [validateCredentials, listGiftCards],
     }),
     settlement: method({
-      GET: [listAllSettlements],
-      POST: [createSettlement],
+      GET: [validateCredentials, listAllSettlements],
+      POST: [validateCredentials, createSettlement],
     }),
     transactions: method({
-      GET: [listTransactions],
-      POST: [createTransaction],
+      GET: [validateCredentials, listTransactions],
+      POST: [validateCredentials, createTransaction],
     }),
   },
 })
